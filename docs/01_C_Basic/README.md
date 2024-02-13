@@ -104,7 +104,7 @@ putchar(ch);
 a>b?c=1: c=2;
 ```
 
-sizeof 运算符，
+`sizeof` 运算符，
 
 ```c
 sizeof(10);
@@ -112,3 +112,4 @@ sizeof(char);
 sizeof(int);
 ```
 
+异或运算，相同为0，不同为1.
