@@ -1,2 +1,0 @@
-PROJECT(MAIN C)
-ADD_EXECUTABLE(main main.c)

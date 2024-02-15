@@ -1,4 +1,14 @@
-/build
-/main.c
+# target
+bin
+obj
+*.out
+
+# CodeBlock
+*.layout
+*.depend
+# VSCode
+.vscode
+
+# Clang
+main.dSYM
 .DS_Store
-a.out
