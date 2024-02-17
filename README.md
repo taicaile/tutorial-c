@@ -45,6 +45,18 @@ yt-dlp --skip-download https://www.youtube.com/watch\?v\=vy9QG75U77g\&list\=PLY_
 
 ## C Library
 
+String In Char Array VS. Pointer To String Literal,
+
 ```c
 #include <math.h>
 ```
+
+## C Basic
+
+```c
+char s1[] = "s1abc" vs char* s2 = "s2abc"
+```
+
+## TODO
+
+<https://www.youtube.com/playlist?list=PLA1FTfKBAEX4hblYoH6mnq0zsie2w6Wif>
