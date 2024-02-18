@@ -2,6 +2,7 @@
 bin
 obj
 *.out
+*.exe
 
 # CodeBlock
 *.layout
