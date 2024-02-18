@@ -1,5 +1,19 @@
 # README
 
+## Compiler
+
+macOS,
+
+```bash
+brew install gcc
+```
+
+Windows,
+
+```bat
+scoop install gcc
+```
+
 ## LeetCode 四月 30 天挑戰
 
 The problems set,
