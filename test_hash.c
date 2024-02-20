@@ -4,12 +4,12 @@
 
 #define MAX_NAME 11
 #define TABLE_SIZE 10
-#define DELETED_NODE (Person *)(0xFFFFFFFFFFFFFFFFUL)
 
-typedef struct
+typedef struct _Person
 {
     char name[MAX_NAME];
     int age;
+    struct _Person *next;
 } Person;
 
 Person *hash_table[TABLE_SIZE];
@@ -43,13 +43,16 @@ void print_hash_table()
         {
             printf("\t%d => NULL\n", i);
         }
-        else if (hash_table[i] == DELETED_NODE)
-        {
-            printf("\t%d => DELETED\n", i);
-        }
         else
         {
-            printf("\t%d => %s\n", i, hash_table[i]->name);
+            printf("\t%d ", i);
+            Person *tmp = hash_table[i];
+            while (tmp != NULL)
+            {
+                printf("=> %s ", tmp->name);
+                tmp = tmp->next;
+            }
+            printf("\n");
         }
     }
     printf("end\n");
@@ -61,60 +64,45 @@ bool hash_table_insert(Person *p)
         return false;
     int index = hash(p->name);
 
-    for (int i = 0; i < TABLE_SIZE; i++)
-    {
-        int try = (i + index) % TABLE_SIZE;
-        if (hash_table[try] == NULL || hash_table[try] == DELETED_NODE)
-        {
-            hash_table[try] = p;
-            return true;
-        }
-    }
-    return false;
+    // as head
+    p->next = hash_table[index];
+    hash_table[index] = p;
+
+    return true;
 }
 
 Person *hash_table_lookup(char *name)
 {
     int index = hash(name);
-
-    for (int i = 0; i < TABLE_SIZE; i++)
+    Person *tmp = hash_table[index];
+    while (tmp != NULL && strncmp(tmp->name, name, MAX_NAME) != 0)
     {
-        int try = (index + i) % TABLE_SIZE;
-        if (hash_table[try] == NULL)
-        {
-            return false;
-        }
-        if (hash_table[try] == DELETED_NODE)
-            continue;
-        if (strcmp(hash_table[try]->name, name) == 0)
-        {
-            return hash_table[try];
-        }
+        tmp = tmp->next;
     }
-
-    return NULL;
+    return tmp;
 }
 
 Person *hash_table_delete(char *name)
 {
     int index = hash(name);
-
-    for (int i = 0; i < TABLE_SIZE; i++)
+    Person *tmp = hash_table[index];
+    Person *prev = NULL;
+    while (tmp != NULL && strncmp(tmp->name, name, MAX_NAME) != 0)
     {
-        int try = (index + i) % TABLE_SIZE;
-        if (hash_table[try] == NULL)
-            return NULL;
-        if (hash_table[try] == DELETED_NODE)
-            continue;
-        if (strcmp(hash_table[try]->name, name) == 0)
-        {
-            Person *tmp = hash_table[try];
-            hash_table[try] = DELETED_NODE;
-            return tmp;
-        }
+        prev = tmp;
+        tmp = tmp->next;
     }
-
-    return NULL;
+    if (tmp == NULL)
+        return NULL;
+    if (prev == NULL)
+    {
+        hash_table[index] = tmp->next;
+    }
+    else
+    {
+        prev->next = tmp->next;
+    }
+    return tmp;
 }
 
 int main(int argc, char const *argv[])
