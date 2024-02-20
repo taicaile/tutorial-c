@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdbool.h>
 
+// https://www.youtube.com/watch?v=2Ti5yvumFTU
+
 #define MAX_NAME 11
 #define TABLE_SIZE 10
 
