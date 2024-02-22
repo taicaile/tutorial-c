@@ -1,10 +1,17 @@
-CFLAGS = -Wall -g -fsanitize=address -fsanitize=leak -fno-omit-frame-pointer
+CC = gcc
+CFLAGS = -Wall -Wextra -g -pedantic
+# -fsanitize=address -fsanitize=leak -fno-omit-frame-pointer
 LDFLAGS = -fsanitize=address -fsanitize=leak
 
+ifeq ($(OS),Windows_NT)
+    OUTFILE = a.exe
+else
+    OUTFILE = a.out
+endif
+
 all:
-	gcc main.c -o main
-	@./main
-	@rm main
+	@$(CC) $(CFLAGS) test_hash.c
+	@./$(OUTFILE)
 
 clean:
 	@rm main
