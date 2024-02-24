@@ -18,15 +18,14 @@ scoop install gcc
 
 The problems set,
 
-```text
-第一天 (Single Number)
-第二天 (Happy Number)
-第三天 (Maximum Subarray)
-第四天 (Move Zeroes)
-第五天 (Best Time to Buy and Sell Stock II)
+- [x] 第一天 (Single Number)
+- [x] 第二天 (Happy Number)
+- [x] 第三天 (Maximum Subarray)
+- [x] 第四天 (Move Zeroes)
+- [x] 第五天 (Best Time to Buy and Sell Stock II)
 第六天 (Group Anagrams)
-第七天 (Counting Elements)
-第八天 (Middle of the Linked List)
+~~第七天 (Counting Elements)~~(skip)
+- [x] 第八天 (Middle of the Linked List)
 第九天 (Backspace String Compare)
 第十天 (Min Stack)
 第十一天 (Diameter of Binary Tree)
@@ -49,7 +48,6 @@ The problems set,
 第二十八天 (First Unique Number)
 第二十九天 (Binary Tree Maximum Path Sum)
 第三十天 (Check If a String Is a Valid Sequence from Root to Leaves Path)
-```
 
 Extracted from <https://www.youtube.com/playlist?list=PLY_qIufNHc29OLToHki4t0Z5KIhUzdYxD> using the yt-dlp.
 
