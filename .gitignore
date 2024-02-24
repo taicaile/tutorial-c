@@ -10,6 +10,6 @@ obj
 # VSCode
 .vscode
 
-# Clang
-main.dSYM
+# macOS
+*.dSYM
 .DS_Store
