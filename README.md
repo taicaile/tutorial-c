@@ -65,10 +65,17 @@ String In Char Array VS. Pointer To String Literal,
 
 ## C Basic
 
+### String Literal
+
 ```c
-char s1[] = "s1abc" vs char* s2 = "s2abc"
+char s1[] = "s1abc" // string literal
+char* s2 = "s2abc" // string literal
 ```
 
 ## TODO
 
 <https://www.youtube.com/playlist?list=PLA1FTfKBAEX4hblYoH6mnq0zsie2w6Wif>
+
+SEI CERT C Coding Standard,
+
+<https://wiki.sei.cmu.edu/confluence/display/c/SEI+CERT+C+Coding+Standard>
