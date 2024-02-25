@@ -1,5 +1,17 @@
 #include <stdio.h>
 
+// https://en.cppreference.com/w/c/language/string_literal
+
+void test01()
+{
+    char a1[] = "abc";  // a1 is char[4] holding {'a', 'b', 'c', '\0'}
+    char a2[3] = "abc"; // a2 is char[3] holding {'a', 'b', 'c'}
+    char a3[4] = "abc"; // a3 is char[4] holding {'a', 'b', 'c', '\0'}
+    printf("a1=%s\n", a1);
+    printf("a2=%s\n", a2);
+    printf("a3=%s\n", a3);
+}
+
 int main(int argc, char const *argv[])
 {
     char s1[] = "s1abcdef"; // the string is located in the stack, modifiable.
@@ -34,5 +46,6 @@ int main(int argc, char const *argv[])
     printf("length of pointer plus one(&s3+1-&s3)=%ld\n", (char *)(&s3 + 1) - (char *)&s3);
     // s3++; // error
 
+    test01();
     return 0;
 }
