@@ -8,7 +8,7 @@ int main(int argc, char const *argv[])
 
     s1[0] = 'x';
     printf("s1=%s\n", s1);
-    printf("size of s1: %lu\n", sizeof(s1));
+    printf("size of s1: %lu\n", sizeof(s1)); // 这里获取的其实是 s1 指针类型的size
     printf("s1+1=%s\n", s1 + 1);
     printf("&s1=%p\n", &s1);
     printf("&s1+1=%p\n", &s1 + 1);
