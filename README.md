@@ -27,7 +27,7 @@ The problems set,
 ~~第七天 (Counting Elements)~~(skip)
 - [x] 第八天 (Middle of the Linked List)
 ~~第九天 (Backspace String Compare)~~
-第十天 (Min Stack)
+~~第十天 (Min Stack)~~
 第十一天 (Diameter of Binary Tree)
 第十二天 (Last Stone Weight)
 第十三天 (Contiguous Array)
