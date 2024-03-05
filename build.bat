@@ -1,5 +1,5 @@
 @echo off
 
-gcc sv.c -o main -Wall -Wextra -pedantic
+gcc sv.c -o a.exe -Wall -Wextra -pedantic
 
-main.exe
+a.exe

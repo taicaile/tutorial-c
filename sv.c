@@ -1,12 +1,6 @@
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "sv.h"
 
-typedef struct {
-  char *data;
-  size_t len;
-} String_View;
+
 
 String_View sv_create(char *str, size_t len) {
   return (String_View){
@@ -33,6 +27,51 @@ int sv_is_equal(String_View a, String_View b) {
   return true;
 }
 
+size_t sv_first_of(String_View view, char target) {
+
+  for (size_t i = 0; i < view.len; i++) {
+    if (view.data[i] == target) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+size_t sv_last_of(String_View view, char target) {
+
+  for (size_t i = view.len - 1; i > 0; i--) {
+    if (view.data[i] == target) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+String_View sv_trim_left(String_View view) {
+  size_t i = 0;
+  while (isspace((int)view.data[i]) && i <= view.len) {
+    i++;
+  }
+
+  return (String_View){
+      .data = view.data + i,
+      .len = view.len - i,
+  };
+}
+
+String_View sv_trim_right(String_View view) {
+
+  size_t i = view.len - 1;
+  while (isspace((int)view.data[i])) {
+    i--;
+  }
+  // better set an null terminator at i+1, but it is not dynamic allocated.
+  return (String_View){
+      .data = view.data,
+      .len = i + 1,
+  };
+}
+
 int main() {
   // test sv_create
   String_View view = sv_create("Hello, World!", strlen("Hello, World!"));
@@ -45,5 +84,23 @@ int main() {
   // test sv_is_equal
   String_View view1 = sv_create("Hello, World!", strlen("Hello, World!"));
   String_View view2 = sv_create("Hello, World!", strlen("Hello, World!"));
-  printf("view1 is equal to view2: %d", sv_is_equal(view1, view2));
+  printf("view1 is equal to view2: %d\n", sv_is_equal(view1, view2));
+
+  // test sv_first_of
+  printf("first index of ',' is %llu\n", sv_first_of(view, ','));
+
+  // test sv_last_of
+  printf("last index of ',' is %llu\n", sv_last_of(view, ','));
+
+  // test sv_strm_left
+  String_View viewtrim =
+      sv_create("  Hello, World!  ", strlen("  Hello, World!  "));
+
+  // trim left
+  String_View trimed = sv_trim_left(viewtrim);
+  printf("trim before: %s, trim after: %s#end\n", viewtrim.data, trimed.data);
+
+  // trim right
+  trimed = sv_trim_right(viewtrim);
+  printf("trim before: %s, trim after: %s#end\n", viewtrim.data, trimed.data);
 }
