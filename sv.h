@@ -7,13 +7,13 @@
 #define View_Print "%.*s"
 #define View_Arg(view) (int)view.len, view.data
 
-#define SV_CREATE(lit) sv_create(lit, sizeof(lit)-1)
+// sizeof vs strlen
+#define SV_CREATE(lit) sv_create(lit, sizeof(lit) - 1)
 
 typedef struct {
   char *data;
   size_t len;
 } String_View;
-
 
 String_View sv_create(char *str, size_t len);
 
@@ -28,4 +28,3 @@ size_t sv_last_of(String_View view, char target);
 String_View sv_trim_left(String_View view);
 
 String_View sv_trim_right(String_View view);
-
