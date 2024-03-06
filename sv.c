@@ -122,5 +122,5 @@ int main() {
     printf("%s, starts with H: %d\n", view.data, sv_starts_with_c(view, 'H'));
 
     // starts with string
-    printf("%s, starts with Hello: %d\n", view.data, sv_starts_with_s(view, sv_create("Hello", (strlen("Hello")))));
+    printf("%s, starts with Hello: %d\n", view.data, sv_starts_with_s(view, SV_CREATE("Hello")));
 }

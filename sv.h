@@ -7,7 +7,7 @@
 #define View_Print "%.*s"
 #define View_Arg(view) (int)view.len, view.data
 
-#define LITERAL_CREATE(lit) sv_create(lit, sizeof(lit)-1)
+#define SV_CREATE(lit) sv_create(lit, sizeof(lit)-1)
 
 typedef struct {
   char *data;
