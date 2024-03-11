@@ -23,13 +23,13 @@ The problems set,
 - [x] 第三天 (Maximum Subarray)
 - [x] 第四天 (Move Zeroes)
 - [x] 第五天 (Best Time to Buy and Sell Stock II)
-第六天 (Group Anagrams)
-~~第七天 (Counting Elements)~~(skip)
+- 第六天 (Group Anagrams)
+- ~~第七天 (Counting Elements)~~(skip)
 - [x] 第八天 (Middle of the Linked List)
-~~第九天 (Backspace String Compare)~~
-~~第十天 (Min Stack)~~
+- ~~第九天 (Backspace String Compare)~~
+- ~~第十天 (Min Stack)~~
 - [x] 第十一天 (Diameter of Binary Tree)
-- [ ] 第十二天 (Last Stone Weight)
+- ~~[ ] 第十二天 (Last Stone Weight)~~
 - [ ] 第十三天 (Contiguous Array)
 - [ ] 第十四天 (Perform String Shifts)
 - [ ] 第十五天 (Product of Array Except Self)
