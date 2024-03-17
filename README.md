@@ -1,5 +1,9 @@
 # README
 
+```bat
+gcc -Iuthash -Wall -Wextra -pedantic "leetcode\525. Contiguous Array\main.c" -o a.exe
+```
+
 ## Compiler
 
 macOS,
