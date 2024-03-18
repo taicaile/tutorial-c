@@ -37,7 +37,7 @@ The problems set,
 - [x] 第十三天 (Contiguous Array)
 - ~~[ ] 第十四天 (Perform String Shifts)~~
 - [x] 第十五天 (Product of Array Except Self)
-- [ ] 第十六天 (Valid Parenthesis String)
+- [x] 第十六天 (Valid Parenthesis String)
 - [ ] 第十七天 (Number of Islands)
 - [ ] 第十八天 (Minimum Path Sum)
 - [ ] 第十九天 (Search in Rotated Sorted Array)
