@@ -38,8 +38,8 @@ The problems set,
 - ~~[ ] 第十四天 (Perform String Shifts)~~
 - [x] 第十五天 (Product of Array Except Self)
 - [x] 第十六天 (Valid Parenthesis String)
-- [ ] 第十七天 (Number of Islands)
-- [ ] 第十八天 (Minimum Path Sum)
+- [x] 第十七天 (Number of Islands)
+- [x] 第十八天 (Minimum Path Sum)
 - [ ] 第十九天 (Search in Rotated Sorted Array)
 - [ ] 第二十天 (Construct Binary Search Tree from Preorder Traversal)
 - [ ] 第二十一天 (Leftmost Column with at Least a One)
