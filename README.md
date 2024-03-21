@@ -40,7 +40,7 @@ The problems set,
 - [x] 第十六天 (Valid Parenthesis String)
 - [x] 第十七天 (Number of Islands)
 - [x] 第十八天 (Minimum Path Sum)
-- [ ] 第十九天 (Search in Rotated Sorted Array)
+- [x] 第十九天 (Search in Rotated Sorted Array)
 - [ ] 第二十天 (Construct Binary Search Tree from Preorder Traversal)
 - [ ] 第二十一天 (Leftmost Column with at Least a One)
 - [ ] 第二十二天 (Subarray Sum Equals K)
