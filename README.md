@@ -41,7 +41,7 @@ The problems set,
 - [x] 第十七天 (Number of Islands)
 - [x] 第十八天 (Minimum Path Sum)
 - [x] 第十九天 (Search in Rotated Sorted Array)
-- [ ] 第二十天 (Construct Binary Search Tree from Preorder Traversal)
+- [x] 第二十天 (Construct Binary Search Tree from Preorder Traversal)
 - [ ] 第二十一天 (Leftmost Column with at Least a One)
 - [ ] 第二十二天 (Subarray Sum Equals K)
 - [ ] 第二十三天 (Bitwise AND of Numbers Range)
