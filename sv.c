@@ -1,5 +1,9 @@
 #include "sv.h"
 
+#ifndef VERSION_INFO
+#define VERSION_INFO "unknown"
+#endif
+
 String_View sv_create(char *str, size_t len) {
   return (String_View){
       .data = str,
@@ -87,40 +91,44 @@ String_View sv_trim_right(String_View view) {
 }
 
 int main() {
-    // test sv_create
-    String_View view = sv_create("Hello, World!", strlen("Hello, World!"));
-    printf("data: %.*s, len: %llu\n", (int)view.len, view.data, view.len);
 
-    // test sv_to_cstr
-    char *str = sv_to_cstr(view);
-    printf("cstr: %s\n", str);
+  printf("version:  %s\n", VERSION_INFO);
 
-    // test sv_is_equal
-    String_View view1 = sv_create("Hello, World!", strlen("Hello, World!"));
-    String_View view2 = sv_create("Hello, World!", strlen("Hello, World!"));
-    printf("view1 is equal to view2: %d\n", sv_is_equal(view1, view2));
+  // test sv_create
+  String_View view = sv_create("Hello, World!", strlen("Hello, World!"));
+  printf("data: %.*s, len: %llu\n", (int)view.len, view.data, view.len);
 
-    // test sv_first_of
-    printf("first index of ',' is %llu\n", sv_first_of(view, ','));
+  // test sv_to_cstr
+  char *str = sv_to_cstr(view);
+  printf("cstr: %s\n", str);
 
-    // test sv_last_of
-    printf("last index of ',' is %llu\n", sv_last_of(view, ','));
+  // test sv_is_equal
+  String_View view1 = sv_create("Hello, World!", strlen("Hello, World!"));
+  String_View view2 = sv_create("Hello, World!", strlen("Hello, World!"));
+  printf("view1 is equal to view2: %d\n", sv_is_equal(view1, view2));
 
-    // test sv_strm_left
-    String_View viewtrim =
-        sv_create("  Hello, World!  ", strlen("  Hello, World!  "));
+  // test sv_first_of
+  printf("first index of ',' is %llu\n", sv_first_of(view, ','));
 
-    // trim left
-    String_View trimed = sv_trim_left(viewtrim);
-    printf("trim before: %s, trim after: %s#end\n", viewtrim.data, trimed.data);
+  // test sv_last_of
+  printf("last index of ',' is %llu\n", sv_last_of(view, ','));
 
-    // trim right
-    trimed = sv_trim_right(viewtrim);
-    printf("trim before: %s, trim after: %s#end\n", viewtrim.data, trimed.data);
+  // test sv_strm_left
+  String_View viewtrim =
+      sv_create("  Hello, World!  ", strlen("  Hello, World!  "));
 
-    // starts with char
-    printf("%s, starts with H: %d\n", view.data, sv_starts_with_c(view, 'H'));
+  // trim left
+  String_View trimed = sv_trim_left(viewtrim);
+  printf("trim before: %s, trim after: %s#end\n", viewtrim.data, trimed.data);
 
-    // starts with string
-    printf("%s, starts with Hello: %d\n", view.data, sv_starts_with_s(view, SV_CREATE("Hello")));
+  // trim right
+  trimed = sv_trim_right(viewtrim);
+  printf("trim before: %s, trim after: %s#end\n", viewtrim.data, trimed.data);
+
+  // starts with char
+  printf("%s, starts with H: %d\n", view.data, sv_starts_with_c(view, 'H'));
+
+  // starts with string
+  printf("%s, starts with Hello: %d\n", view.data,
+         sv_starts_with_s(view, SV_CREATE("Hello")));
 }

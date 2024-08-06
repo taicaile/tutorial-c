@@ -13,3 +13,6 @@ obj
 # macOS
 *.dSYM
 .DS_Store
+
+# ast
+*.json
